@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title id="pageTitle">6th Project - Republic Day Wishes</title>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+.logo{
+    margin-left: 1200px;
+    height: 50px;
+    width: 10%;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff9933, #ffffff, #33cc33, #ffffff, #ff9933);
+    animation: borderAnimation 5s linear infinite;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Note: Use only one font-family property */
+}
+
+.video {
+    display: none;
+    float: right;
+    margin: 10px 0%;
+    align-items: center;
+}
+
+marquee {
+    font-size: 20px;
+    margin: -20px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 40%;
+}
+
+.wishes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2px;
+    margin-left: 0px;
+    font-size: 80px;
+}
+
+.wishes i {
+    font-size: 50px;
+    margin: 0;
+}
+
+::placeholder {
+    color: green;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 25px;
+    border: 5px solid orange;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+#nameInput {
+    margin-top: 20%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: Blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+section {
+    display: flex;
+}
+
+#wishesMessage {
+    margin-top: -40%;
+    margin-left: 100px;
+    margin-right: 0px;
+    width: 90%;
+    font-size: 40px;
+    text-align: center;
+}
+
+#shareLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+}
+
+a {
+    margin: 5px;
+    text-decoration: none;
+    color: linear-gradient(45deg, #ff9933, #ffffff, #33cc33, #ffffff, #ff9933);
+}
+
+a:hover {
+    color: #ff9933;
+}
+
+.container {
+    margin: 0px 10px 0 50px;
+    display: none;
+}
+
+.stick {
+    height: 700px;
+    width: 20px;
+    background: black;
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.flag-container {
+    display: flex;
+    width: 370px;
+    flex-direction: column;
+    padding-top: 20px;
+    height: 300px;
+    clip-path: polygon(32% 6%, 70% 0%, 100% 8%, 100% 99%, 70% 93%, 27% 100%, 0 95%, 0 0);
+    animation: wave 1.5s ease-in-out infinite alternate;
+}
+
+.flag {
+    height: 100px;
+    width: 370px;
+    background: black;
+}
+
+.orange {
+    background: orange;
+    animation: width-move 4s ease;
+}
+
+.white {
+    background: white;
+    display: flex;
+    justify-content: center;
+    animation: width-move 4s ease;
+}
+
+@keyframes width-move {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 350px;
+    }
+}
+
+.flag .ashok-chakra {
+    height: 100px;
+    animation: ashoka 4s linear infinite;
+}
+
+.green {
+    background: green;
+    animation: width-move 4s ease;
+}
+
+@keyframes ashoka {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wave {
+    0% {
+        clip-path: polygon(32% 6%, 70% 0%, 100% 8%, 100% 99%, 70% 93%, 27% 100%, 0 95%, 0 0);
+    }
+    25% {
+        clip-path: polygon(32% 4%, 70% 2%, 100% 5%, 100% 96%, 70% 95%, 27% 98%, 0 95%, 0 0);
+    }
+    50% {
+        clip-path: polygon(32% 2%, 70% 4%, 100% 3%, 100% 94%, 70% 97%, 27% 96%, 0 95%, 0 0);
+    }
+    75% {
+        clip-path: polygon(32% 1%, 70% 5%, 100% 2%, 100% 91%, 70% 98%, 27% 95%, 0 95%, 0 0);
+    }
+    100% {
+        clip-path: polygon(31% 0, 70% 6%, 100% 0, 100% 89%, 70% 100%, 27% 93%, 0 95%, 0 0);
+    }
+}
+
+@media (max-width: 800px) {
+    input[type="text"] {
+        padding: 5px;
+        font-size: 20px;
+    }
+    #nameInput {
+        margin-top: 50%;
+    }
+    button {
+        padding: 10px;
+    }
+    .wishes {
+        margin-top: 2px;
+        margin-left: 5px;
+        font-size: 10px;
+    }
+    .wishes i {
+        font-size: 50px;
+    }
+    #wishesMessage {
+        margin-top: -100%;
+        margin-left: 30px;
+        margin-right: 5px;
+        font-size: 23px;
+        text-align: center;
+    }
+    .container {
+        margin: 10px 10px 0 5px;
+        display: none;
+    }
+    .stick {
+        height: 700px;
+        width: 15px;
+        margin: 0;
+    }
+    .flag-container {
+        width: 320px;
+    }
+    @keyframes width-move {
+        from {
+            width: 0px;
+        }
+        to {
+            width: 300px;
+        }
+    }
+}
+
+</style>
+</head>
+<body>
+
+<img class="logo" src="Logo.png"/>
+
+  <div class="wishes">
+    <input type="text" id="nameInput" placeholder="Enter your name" required>
+    <span id="nameErrorMessage" style="color: red; font-size:50px;"></span>
+    <button id="generateButton">Generate Wishes</button>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="stick"></div>
+      <div class="flag-container">
+        <div class="flag orange"></div>
+        <div class="flag white">
+          <img src="https://i.ibb.co/qy2Xkr4/ashoka-chakra.png" class="ashok-chakra">
+        </div>
+        <div class="flag green"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wishes">
+      <div id="wishesMessage" style="display: none;"></div>
+      <div id="shareLinks" style="display: none;">
+        <div id="hiddenWishes" style="display: none;"></div>
+        <p style="font-size:30px; text-align: center;">Share your wishes:</p>
+        <a id="instagramLink" href="#"><i class="fab fa-instagram-square fa-fade"></i></a>
+        <a id="facebookLink" href="#"><i class="fab fa-facebook fa-fade"></i></a>
+        <a id="whatsappLink" href="#"><i class="fab fa-whatsapp-square fa-bounce"></i></a>
+        <a id="twitterLink" href="#"><i class="fab fa-twitter fa-flip"></i></a>
+        <a id="threadsLink" href="#"><i class="fab fa-weixin fa-shake"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="video">
+    <video id="autoplayVideo" width="0%" height="0%" controls download loop>
+      <source src="https://rspcompany.in/Videos/RepublicDay.mp4" type="video/mp4" class="post-img">
+    </video>
+  </div>
+<script>
+
+const generateButton = document.getElementById("generateButton");
+const nameInput = document.getElementById("nameInput");
+const nameErrorMessage = document.getElementById("nameErrorMessage");
+const pageTitle = document.getElementById("pageTitle");
+const wishesMessage = document.getElementById("wishesMessage");
+const hiddenWishes = document.getElementById("hiddenWishes");
+const shareLinks = document.getElementById("shareLinks");
+const flagContainer = document.querySelector(".flag-container");
+const container = document.querySelector(".container");
+const instagramLink = document.getElementById("instagramLink");
+const facebookLink = document.getElementById("facebookLink");
+const whatsappLink = document.getElementById("whatsappLink");
+const twitterLink = document.getElementById("twitterLink");
+const threadsLink = document.getElementById("threadsLink");
+
+const republicDayWishes = [
+  "Wishing you a patriotic Republic Day filled with reverence for our glorious past and hope for a brighter future!",
+  // ... (other wishes)
+  "On this joyous Republic Day, let's envision a future where every citizen plays a role in shaping India's destiny, making it a beacon of hope for generations to come."
+];
+
+function getRandomWish() {
+  const randomIndex = Math.floor(Math.random() * republicDayWishes.length);
+  return republicDayWishes[randomIndex];
+}
+
+generateButton.addEventListener("click", () => {
+  const name = nameInput.value;
+
+  // Check if the name input is empty
+  if (!name) {
+    nameErrorMessage.textContent = "Please enter your name";
+    return;
+  } else {
+    nameErrorMessage.textContent = ""; // Clear the error message
+  }
+
+  // Update the title with the input value
+  pageTitle.textContent = ` ${name}`;
+
+  const randomWish = getRandomWish();  
+  const styledMessage = `Hello ! <span style=" ">${name} </span><br><span style="color: orange">Happy </span> <span style="color: white">Republic</span> </span><span style="color: green">Day!</span><br> <br>${randomWish}✊`;
+  const plainTextMessage = `Happy Republic day!\n\n ${randomWish}!\n${name}✍\n\n${window.location.href}`;
+
+  wishesMessage.innerHTML = styledMessage;
+  hiddenWishes.textContent = plainTextMessage;
+
+  wishesMessage.style.display = "block";
+  wishesMessage.style.fontWeight = "bold";
+
+  // Update the href attributes for the rsp social media links
+  const encodedMessage = encodeURIComponent(hiddenWishes.textContent);
+  whatsappLink.href = `https://wa.me/?text=${encodedMessage}`;
+  twitterLink.href = `https://twitter.com/intent/tweet?text=${encodedMessage}`;
+  instagramLink.href = `https://www.instagram.com/rspeducation/`;
+  facebookLink.href = `https://www.facebook.com/sharer.php?u=${encodedMessage}`;
+  threadsLink.href = `https://www.youtube.com/@rspeducation`;
+
+  shareLinks.style.display = "block";
+  flagContainer.style.display = "block";
+  container.style.display = "flex";
+  nameInput.style.display = "none";
+  generateButton.style.display = "none";
+
+  // Show the rsp video
+  const videoElement = document.querySelector(".video");
+  videoElement.style.display = "block";
+
+  // Play the rsp video as a loop
+  const video = document.getElementById("autoplayVideo");
+  video.play();
+});
+
+</script>
+
+</body>
+</html>
